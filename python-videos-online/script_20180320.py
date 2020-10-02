@@ -24,7 +24,7 @@ from bs4 import BeautifulSoup
 import requests
 
 def extract_title(content):
-  soup = BeautifulSoup(content, "lxml")
+  soup = BeautifulSoup(content, "html.parser")
   tag = soup.find("title", text=True)
 
   if not tag:
@@ -34,7 +34,7 @@ def extract_title(content):
   return tag.string.strip() 
 
 def extract_links(content):
-  soup = BeautifulSoup(content, "lxml")
+  soup = BeautifulSoup(content, "html.parser")
   # set é um conjunto/array, sem elementos duplicados
   links = set()
 
