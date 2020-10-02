@@ -24,7 +24,7 @@ from bs4 import BeautifulSoup
 import requests
 
 def extract_title(content):
-  soup = BeautifulSoup(content, "lxml")
+  soup = BeautifulSoup(content, "html.parser")
   tag = soup.find("title", text=True)
 
   if not tag:
